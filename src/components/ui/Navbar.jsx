@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from "../../auth/AuthContext";
+import { ACTION } from "../../actions/actions";
 
 export const Navbar = () => {
+  const { dispatch } = useContext(AuthContext);
+  const {
+    user: { name },
+  } = useContext(AuthContext);
+  const handleLogout = () => {
+
+    dispatch({ type: ACTION.LOGOUT });
+  };
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -40,11 +51,18 @@ export const Navbar = () => {
           >
             Search
           </NavLink>
+          <span
+            className="nav-item nav-link text-info"
+            style={{ color: "#fff" }}
+          >
+            {name}
+          </span>
           <NavLink
             activeClassName="active"
             className="nav-item nav-link"
             exact
             to="/login"
+            onClick={() => handleLogout()}
           >
             Logout
           </NavLink>
