@@ -2,6 +2,6 @@ import React from 'react'
 
 export const HeroScreen = () => {
   return (
-    <div>HeroScreen</div>
+    <h1>HeroScreen</h1>
   )
 }
