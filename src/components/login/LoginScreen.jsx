@@ -5,6 +5,8 @@ export const LoginScreen = () => {
   const history = useHistory();
   const location = useLocation();
   console.log(location);
+  console.log(history);
+  
   
   const handleMarvel = () => {
     history.replace("/marvel");
