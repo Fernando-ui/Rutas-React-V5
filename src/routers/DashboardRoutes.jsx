@@ -8,9 +8,11 @@ import { SearchScreen } from "../components/search/SearchScreen";
 import { Navbar } from "../components/ui/Navbar";
 
 export const DashboardRoutes = () => {
+  
+  
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="container">
           <Switch>
               <Route exact path="/dc" component={DcScreen}/>

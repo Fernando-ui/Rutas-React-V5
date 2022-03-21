@@ -1,16 +1,22 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import AuthContext from "../../auth/AuthContext";
 import { ACTION } from "../../actions/actions";
 
 export const Navbar = () => {
+  const history = useHistory();
   const { dispatch } = useContext(AuthContext);
+console.log(history);
+
   const {
     user: { name },
   } = useContext(AuthContext);
-  const handleLogout = () => {
 
+  const handleLogout = () => {
     dispatch({ type: ACTION.LOGOUT });
+    history.replace('/dc');
+    console.log('Entrando al logout');
+    
   };
 
   return (
