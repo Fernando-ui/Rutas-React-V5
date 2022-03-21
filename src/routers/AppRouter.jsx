@@ -4,7 +4,6 @@ import AuthContext from "../auth/AuthContext";
 import { LoginScreen } from "../components/login/LoginScreen";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { PublicRoute } from "./PublicRoute";
 
 
 

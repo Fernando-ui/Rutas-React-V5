@@ -7,6 +7,8 @@ export const PrivateRoutes = ({
   component: Component,
   ...rest
 }) => {
+  localStorage.setItem('lastView',rest.location.pathname);
+  
   return (
     <>
       <Route
